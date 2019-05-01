@@ -3,17 +3,18 @@ import java.util.List;
 
 public class Kata {
 
-    static public List<Integer> primeFactors(int number) {
-        List<Integer> list;
-        list = new ArrayList<>();
-        if (number != 1) {
-            if (number > 3) {
-                list.add(number / 2);
-                list.add(number / 2);
-                return list;
+
+    public static List<Integer> primeFactors(int number) {
+        List<Integer> primes = new ArrayList<>();
+        while (number > 1){
+            if (number % 2 != 0){
+                primes.add(number);
+                break;
+            } else {
+                number /= 2;
+                primes.add(2);
             }
-            list.add(number);
         }
-        return list;
+        return primes;
     }
 }
